@@ -16,7 +16,7 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
   public product: Product;
   form: FormGroup;
   message:string;
-  private products: Product[];
+  public products: Product[];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
