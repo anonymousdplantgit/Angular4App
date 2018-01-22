@@ -13,7 +13,7 @@ import { AppComponent } from '../../app.component';
   providers: [ProductService]
 })
 export class ProductManagementComponent implements OnInit,OnDestroy {
-  product: Product;
+  public product: Product;
   form: FormGroup;
   message:string;
   private products: Product[];
