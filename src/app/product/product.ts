@@ -1,14 +1,14 @@
 export class Product {
-    productId: number;
+    produitId: number;
     ref: string;
     label: string;
     description: string;
     buyingPrice: number;
     sellingPrice: number;   
-    constructor(productId: number, ref: string, label: string,
+    constructor(produitId: number, ref: string, label: string,
        description: string,buyingPrice : number,sellingPrice:number
        ){
-      this.productId = productId;
+      this.produitId = produitId;
       this.ref = ref;
       this.label = label;
       this.description = description;

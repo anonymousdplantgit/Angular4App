@@ -30,7 +30,7 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
 
 
     this.form = new FormGroup({
-      productId : new FormControl(),
+      produitId : new FormControl(),
       ref: new FormControl(null, Validators.required),
       label: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
@@ -45,7 +45,7 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
   onSubmit() {
     if (this.form.valid) {
         let product: Product = new Product(
-          this.form.controls['productId'].value,
+          this.form.controls['produitId'].value,
           this.form.controls['ref'].value,
           this.form.controls['label'].value,
           this.form.controls['description'].value,
@@ -79,10 +79,10 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
  
   delete(product: Product) {
     if (product) {
-      this.productService.deleteById(product.productId).subscribe(
+      this.productService.deleteById(product.produitId).subscribe(
         res => {
           this.getAll();
-          console.log('delete product '+ product.productId+' done');
+          console.log('delete product '+ product.produitId+' done');
           this.message="Deleted successfully";
           this.app.showCustom();
         },
@@ -94,7 +94,7 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
   edit(product: Product) {
     console.log(product);
     this.form.patchValue({
-      productId: product.productId,
+      produitId: product.produitId,
       ref: product.ref,
       label: product.label,
       description: product.description,

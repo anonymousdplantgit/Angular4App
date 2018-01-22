@@ -4,7 +4,7 @@
     <div class="form-group">
         <input type="hidden"
         class="form-control"
-        formControlName="productId" >
+        formControlName="produitId" >
        <div class="col-md-2"><input type="text"
           class="form-control"
           formControlName="ref" placeholder="Ref">
@@ -55,7 +55,7 @@
           </thead>
           <tbody>
              <tr *ngFor="let element of products">
-                <th scope="row">{{element.productId}}</th>
+                <th scope="row">{{element.produitId}}</th>
                 <td>{{element.ref}}</td>
                 <td>{{element.label}}</td>
                 <td>{{element.description}}</td>
