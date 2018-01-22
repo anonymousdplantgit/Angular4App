@@ -34,8 +34,8 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
       ref: new FormControl(null, Validators.required),
       label: new FormControl(null, Validators.required),
       description: new FormControl(null, Validators.required),
-      buyingPrice: new FormControl(null, Validators.required),
-      sellingPrice: new FormControl(null, Validators.required),
+      prixAchat: new FormControl(null, Validators.required),
+      prixVente: new FormControl(null, Validators.required),
       message : new FormControl()
     });
   }
@@ -49,8 +49,8 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
           this.form.controls['ref'].value,
           this.form.controls['label'].value,
           this.form.controls['description'].value,
-          this.form.controls['buyingPrice'].value,
-          this.form.controls['sellingPrice'].value);
+          this.form.controls['prixAchat'].value,
+          this.form.controls['prixVente'].value);
         this.productService.save(product).subscribe(
           response =>this.message="Added",
           error =>  this.message = <any>error);
@@ -98,8 +98,8 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
       ref: product.ref,
       label: product.label,
       description: product.description,
-      buyingPrice:product.buyingPrice,
-      sellingPrice:product.sellingPrice
+      prixAchat:product.prixAchat,
+      prixVente:product.prixVente
   });
   
   }

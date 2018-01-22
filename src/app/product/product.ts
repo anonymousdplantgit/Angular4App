@@ -3,17 +3,17 @@ export class Product {
     ref: string;
     label: string;
     description: string;
-    buyingPrice: number;
-    sellingPrice: number;   
+    prixAchat: number;
+    prixVente: number;   
     constructor(produitId: number, ref: string, label: string,
-       description: string,buyingPrice : number,sellingPrice:number
+       description: string,prixAchat : number,prixVente:number
        ){
       this.produitId = produitId;
       this.ref = ref;
       this.label = label;
       this.description = description;
-      this.buyingPrice = buyingPrice;
-      this.sellingPrice = sellingPrice;
+      this.prixAchat = prixAchat;
+      this.prixVente = prixVente;
 
     }
    
