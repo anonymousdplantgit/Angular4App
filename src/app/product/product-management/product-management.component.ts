@@ -50,8 +50,7 @@ export class ProductManagementComponent implements OnInit,OnDestroy {
           this.form.controls['label'].value,
           this.form.controls['description'].value,
           this.form.controls['buyingPrice'].value,
-          this.form.controls['sellingPrice'].value,
-          this.form.controls['categorie'].value);
+          this.form.controls['sellingPrice'].value);
         this.productService.save(product).subscribe(
           response =>this.message="Added",
           error =>  this.message = <any>error);
