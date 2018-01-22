@@ -1,0 +1,72 @@
+<div class="row">
+   
+    <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <input type="hidden"
+        class="form-control"
+        formControlName="productId" >
+       <div class="col-md-2"><input type="text"
+          class="form-control"
+          formControlName="ref" placeholder="Ref">
+       </div>
+       <div class="col-md-2">     <input type="text"
+          class="form-control"
+          formControlName="label" placeholder="Label">
+       </div>
+       <div class="col-md-2">  
+          <input type="text"
+             class="form-control"
+             formControlName="description" placeholder="description">
+       </div>
+       <div class="col-md-2">  
+          <input type="number"
+             class="form-control"
+             formControlName="buyingPrice" placeholder="buyingPrice">
+       </div>
+       <div class="col-md-2">  
+          <input type="number"
+             class="form-control"
+             formControlName="sellingPrice" placeholder="sellingPrice">
+       </div>
+    </div>
+    <div class="form-group">
+      <pre>{{form.value | json}}</pre>
+      <pre *ngIf="message">{{message}}</pre>
+      <button type="submit" class="btn btn-primary"  [disabled]="!form.valid" >Submit</button>
+      <button type="button" class="btn btn-warning" (click)="reset()">Cancel</button>
+    </div>
+    
+    
+    </form>
+ </div>
+ <div class="row">
+    <section class="main">
+       <table class="table">
+          <thead>
+             <tr>
+                <th>#</th>
+                <th>ref</th>
+                <th>label</th>
+                <th>description</th>
+                <th>Buying Price</th>
+                <th>Selling Price</th>
+                <th></th>
+             </tr>
+          </thead>
+          <tbody>
+             <tr *ngFor="let element of products">
+                <th scope="row">{{element.productId}}</th>
+                <td>{{element.ref}}</td>
+                <td>{{element.label}}</td>
+                <td>{{element.description}}</td>
+                <td>{{element.buyingPrice}}</td>
+                <td>{{element.sellingPrice}}</td>
+                <td>
+                   <button type="button" class="btn btn-success" (click)="edit(element)">Edit</button>
+                   <button type="button" class="btn btn-danger" (click)="delete(element)">Delete</button>
+                </td>
+             </tr>
+          </tbody>
+       </table>
+    </section>
+ </div>
