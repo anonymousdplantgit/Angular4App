@@ -1,0 +1,66 @@
+<div class="row">
+   
+  <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+      <input type="hidden"
+      class="form-control"
+      formControlName="fournisseurId" >
+     <div class="col-md-2"><input type="text"
+        class="form-control"
+        formControlName="nom" placeholder="nom">
+     </div>
+     <div class="col-md-2">     <input type="text"
+        class="form-control"
+        formControlName="prenom" placeholder="prenom">
+     </div>
+     <div class="col-md-2">  
+        <input type="text"
+           class="form-control"
+           formControlName="adresse" placeholder="adresse">
+     </div>
+     <div class="col-md-2">  
+      <input type="text"
+         class="form-control"
+         formControlName="phone" placeholder="phone">
+   </div>
+    
+  </div>
+  <div class="form-group">
+    <pre>{{form.value | json}}</pre>
+    <pre *ngIf="message">{{message}}</pre>
+    <button type="submit" class="btn btn-primary"  [disabled]="!form.valid" >Submit</button>
+    <button type="button" class="btn btn-warning" (click)="reset()">Cancel</button>
+  </div>
+  
+  
+  </form>
+</div>
+<div class="row">
+  <section class="main">
+     <table class="table">
+        <thead>
+           <tr>
+              <th>#</th>
+              <th>nom</th>
+              <th>prenom</th>
+              <th>adresse</th>
+              <th>phone</th>
+              <th></th>
+           </tr>
+        </thead>
+        <tbody>
+           <tr *ngFor="let element of fournisseurs">
+              <th scope="row">{{element.categorieId}}</th>
+              <td>{{element.nom}}</td>
+              <td>{{element.prenom}}</td>
+              <td>{{element.adresse}}</td>
+              <td>{{element.phone}}</td>
+              <td>
+                 <button type="button" class="btn btn-success" (click)="edit(element)">Edit</button>
+                 <button type="button" class="btn btn-danger" (click)="delete(element)">Delete</button>
+              </td>
+           </tr>
+        </tbody>
+     </table>
+  </section>
+</div>

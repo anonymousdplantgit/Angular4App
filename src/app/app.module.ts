@@ -8,6 +8,7 @@ import { CategorieModule } from './categorie/categorie.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FournisseurModule } from './fournisseur/fournisseur.module';
     
 
     
@@ -21,6 +22,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpModule,
     ProductModule,
     CategorieModule,
+    FournisseurModule,
     Ng4LoadingSpinnerModule,
     BrowserModule,BrowserAnimationsModule, ToastModule.forRoot()
    ],
