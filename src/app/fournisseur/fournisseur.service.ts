@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch'
 export class FournisseurService {
 
   //private apiUrl = ' http://localhost:8080/fournisseurs';
-   private apiUrl = 'https://global-management-application.herokuapp.com/categories';
+  private apiUrl = 'https://global-management-application.herokuapp.com/fournisseurs';
   constructor(private http: Http) { }
   findAll(): Observable<Fournisseur[]>  {
     return this.http.get(this.apiUrl)
