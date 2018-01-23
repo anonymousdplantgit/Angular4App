@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { ProductModule } from './product/product.module';
+import { CategorieModule } from './categorie/categorie.module';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 import { ToastModule } from 'ng2-toastr/ng2-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -19,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppRoutingModule,
     HttpModule,
     ProductModule,
+    CategorieModule,
     Ng4LoadingSpinnerModule,
     BrowserModule,BrowserAnimationsModule, ToastModule.forRoot()
    ],
