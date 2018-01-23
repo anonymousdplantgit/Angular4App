@@ -8,8 +8,8 @@ import 'rxjs/add/operator/catch'
 @Injectable()
 export class FournisseurService {
 
-  private apiUrl = ' http://localhost:8080/fournisseurs';
-  //private apiUrl = 'https://global-management-application.herokuapp.com/categories';
+  //private apiUrl = ' http://localhost:8080/fournisseurs';
+   private apiUrl = 'https://global-management-application.herokuapp.com/categories';
   constructor(private http: Http) { }
   findAll(): Observable<Fournisseur[]>  {
     return this.http.get(this.apiUrl)
